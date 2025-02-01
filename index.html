@@ -24,13 +24,16 @@
       flex-direction: column;
       min-height: 100vh;
       align-items: center;
+      margin: 0 auto;
     }
 
-    header, .intro, .services, .contact {
-      max-width: 50%;
-      width: 50%;
-      text-align: center;
+    /* Container width rules: full width on mobile, narrower on large screens */
+    header, .intro, .services, .contact, footer {
+      width: 100%;
+      max-width: 1200px;
       padding: 60px 20px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     header {
@@ -38,18 +41,19 @@
       align-items: center;
       background-color: #ffffff;
       justify-content: space-between;
-      padding: 20px;
     }
 
+    /* Make the logo larger on mobile as well */
     .logo img {
       max-width: 100%;
       height: auto;
-      max-height: 40px;
+      max-height: 80px; /* increased height limit */
     }
 
     .header-text {
       font-size: 1.2rem;
       color: #555;
+      margin-left: 10px;
     }
 
     .services {
@@ -72,7 +76,6 @@
       list-style: none;
       margin: 20px 0;
       padding: 0;
-      text-align: center;
     }
 
     .service-list li {
@@ -85,7 +88,7 @@
       flex-direction: column;
       gap: 20px;
       width: 100%;
-      max-width: 100%;
+      max-width: 600px;
       margin: 0 auto;
     }
 
@@ -130,14 +133,60 @@
       font-size: 1rem;
       width: 100%;
     }
-  </style>
-  <script>
-    function showConfirmation(event) {
-      event.preventDefault();
-      document.getElementById('confirmation').style.display = 'block';
-      document.querySelector('.contact-form').reset();
+
+    /* Make layout responsive */
+    @media (max-width: 768px) {
+      header, .intro, .services, .contact, footer {
+        padding: 40px 20px;
+      }
+
+      .header {
+        flex-direction: column;
+      }
+
+      .header-text {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .logo img {
+        max-height: 100px;
+      }
     }
-  </script>
+
+    /* Cookie banner styles */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      display: none;
+      z-index: 9999;
+    }
+
+    #cookie-banner button {
+      background-color: #fff;
+      color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      margin-left: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #cookie-banner button:hover {
+      background-color: #eaeaea;
+    }
+  </style>
 </head>
 
 <body>
@@ -168,7 +217,7 @@
 
   <section class="contact">
     <h2>Contact Me</h2>
-    <form class="contact-form" action="https://form.taxi/s/qulv7176" method="POST">
+    <form class="contact-form" action="https://form.taxi/s/qulv7176" method="POST" onsubmit="showConfirmation(event)">
       <label for="name">Name</label>
       <input type="text" id="name" name="Name" placeholder="Your name" required>
       <label for="email">Email</label>
@@ -186,5 +235,35 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner">
+    <span>We use cookies to ensure you get the best experience on our website. By continuing, you agree to our cookie policy.</span>
+    <button onclick="acceptCookies()">Accept</button>
+  </div>
+
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      document.getElementById('confirmation').style.display = 'block';
+      document.querySelector('.contact-form').reset();
+    }
+
+    // Cookie banner code
+    function acceptCookies() {
+      // Set a cookie that expires in 365 days
+      document.cookie = "acceptedCookies=true; max-age=" + 60*60*24*365 + "; path=/";
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function checkCookie() {
+      // Check if 'acceptedCookies=true' is present
+      if (!document.cookie.split('; ').find(row => row.startsWith('acceptedCookies='))) {
+        document.getElementById('cookie-banner').style.display = 'block';
+      }
+    }
+
+    window.onload = checkCookie;
+  </script>
 </body>
 </html>
