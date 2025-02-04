@@ -51,7 +51,10 @@
   </section>
 
   <footer>
-    <p>&copy; <span id="year"></span> Metrapi. All rights reserved.</p>
+    <p>
+      &copy; <span id="year"></span> Metrapi. All rights reserved.
+      | <a href="privacy-policy.html">Privacy &amp; Cookie Policy</a>
+    </p>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
@@ -59,8 +62,13 @@
 
   <!-- Cookie banner -->
   <div id="cookie-banner">
-    <span>We use cookies to ensure you get the best experience on our website. By continuing, you agree to our cookie policy.</span>
+    <span>
+      We use cookies to ensure you get the best experience on our website.
+      For more information, please see our
+      <a href="privacy-policy.html">Privacy &amp; Cookie Policy</a>.
+    </span>
     <button onclick="acceptCookies()">Accept</button>
+    <button onclick="refuseCookies()">Refuse</button>
   </div>
 
   <script>
@@ -71,12 +79,25 @@
     }
 
     function acceptCookies() {
+      // Set a cookie indicating consent
       document.cookie = "acceptedCookies=true; max-age=" + 60*60*24*365 + "; path=/";
       document.getElementById('cookie-banner').style.display = 'none';
     }
 
+    function refuseCookies() {
+      // Set a cookie indicating refusal
+      document.cookie = "acceptedCookies=false; max-age=" + 60*60*24*365 + "; path=/";
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
     function checkCookie() {
-      if (!document.cookie.split('; ').find(row => row.startsWith('acceptedCookies='))) {
+      // Check if 'acceptedCookies' exists
+      const cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('acceptedCookies='));
+
+      // If no value for 'acceptedCookies' cookie, show the banner
+      if (!cookieValue) {
         document.getElementById('cookie-banner').style.display = 'block';
       }
     }
