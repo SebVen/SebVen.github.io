@@ -4,9 +4,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', Arial, sans-serif;
     font-weight: 300;
-  }
+}
 
-  body {
+body {
     background-color: #ffffff;
     color: #333;
     line-height: 1.6;
@@ -15,89 +15,89 @@
     min-height: 100vh;
     align-items: center;
     margin: 0 auto;
-  }
+}
 
-  /* Container width rules for sections except the footer */
-  header, .intro, .services, .contact {
+/* Container width rules for sections except the footer */
+header, .intro, .services, .contact {
     width: 100%;
     max-width: 1200px;
     padding: 60px 20px;
     margin: 0 auto;
     text-align: center;
-  }
+}
 
-  header {
+header {
     display: flex;
     align-items: center;
     background-color: #ffffff;
     justify-content: space-between;
-  }
+}
 
-  .logo img {
+.logo img {
     max-width: 100%;
     height: auto;
     max-height: 50px;
-  }
+}
 
-  .header-text {
+.header-text {
     font-size: 1.2rem;
     color: #555;
     margin-left: 10px;
-  }
+}
 
-  .services {
+.services {
     background-color: rgba(177, 195, 230, 0.3);
-  }
+}
 
-  h2 {
+h2 {
     color: #0C3C9C;
     font-size: 1.8rem;
     font-weight: 200;
     margin-bottom: 20px;
     text-align: center;
-  }
+}
 
-  p, ul, form {
+p, ul, form {
     font-size: 1.1rem;
-  }
+}
 
-  .service-list {
+.service-list {
     list-style: none;
     margin: 20px 0;
     padding: 0;
-  }
+}
 
-  .service-list li {
+.service-list li {
     margin-bottom: 10px;
     font-size: 1.2rem;
-  }
+}
 
-  .contact-form {
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-  }
+}
 
-  .contact-form input,
-  .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1.1rem;
     width: 100%;
-  }
+}
 
-  .confirmation-message {
+.confirmation-message {
     display: none;
     color: #4CAF50;
     font-size: 1.2rem;
     margin-top: 20px;
-  }
+}
 
-  .contact-form button {
+.contact-form button {
     padding: 15px;
     background-color: #4CAF50;
     color: #ffffff;
@@ -107,14 +107,14 @@
     font-size: 1.2rem;
     transition: background-color 0.3s;
     width: 100%;
-  }
+}
 
-  .contact-form button:hover {
+.contact-form button:hover {
     background-color: #45a049;
-  }
+}
 
-  /* Footer should span the entire width */
-  footer {
+/* Footer styles */
+footer {
     background-color: #4CAF50;
     color: #ffffff;
     text-align: center;
@@ -122,51 +122,59 @@
     margin-top: auto;
     font-size: 1rem;
     width: 100%;
-    color: inherit;
-    text-decoration: underline;
-  }
+}
 
-  /* Make layout responsive */
-  @media (max-width: 768px) {
+/* Only the link in the footer should be underlined */
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Make layout responsive */
+@media (max-width: 768px) {
     header, .intro, .services, .contact {
-      padding: 40px 20px;
+        padding: 40px 20px;
     }
 
     .header {
-      flex-direction: column;
+        flex-direction: column;
     }
 
     .header-text {
-      margin-left: 0;
-      margin-top: 10px;
+        margin-left: 0;
+        margin-top: 10px;
     }
 
     h2 {
-      font-size: 1.6rem;
+        font-size: 1.6rem;
     }
 
     .logo img {
-      max-height: 60px; /* keep smaller on mobile as well */
+        max-height: 60px; /* keep smaller on mobile as well */
     }
-  }
+}
 
-  /* Cookie banner styles */
-  #cookie-banner {
+/* Cookie banner styles */
+#cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: #4CAF50;
-    color: #fff;
+    color: #fff;          /* White text for the banner */
     padding: 15px;
     text-align: center;
     display: none;
     z-index: 9999;
-    color: inherit;
-    text-decoration: underline;
-  }
+}
 
-  #cookie-banner button {
+/* Only the link in the banner should be underlined */
+#cookie-banner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#cookie-banner button {
     background-color: #fff;
     color: #4CAF50;
     border: none;
@@ -175,8 +183,8 @@
     margin-left: 10px;
     cursor: pointer;
     font-weight: bold;
-  }
+}
 
-  #cookie-banner button:hover {
+#cookie-banner button:hover {
     background-color: #eaeaea;
-  }
+}
