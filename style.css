@@ -122,6 +122,8 @@
     margin-top: auto;
     font-size: 1rem;
     width: 100%;
+    color: inherit;
+    text-decoration: underline;
   }
 
   /* Make layout responsive */
@@ -160,6 +162,8 @@
     text-align: center;
     display: none;
     z-index: 9999;
+    color: inherit;
+    text-decoration: underline;
   }
 
   #cookie-banner button {
