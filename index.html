@@ -2,55 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Metrapi – Statistical Consultancy for Healthcare Professionals" />
+  <!-- Primary Meta Tags -->
+  <title>Metrapi – Statistical Consultancy for Healthcare Professionals in Ireland</title>
+  <meta name="description" content="Metrapi provides professional statistical consultancy and data analysis for healthcare professionals in Ireland. Enhance your research with robust study designs, data management, and predictive modeling. Contact us today." />
+  <meta name="keywords" content="statistical consultancy, healthcare research, data analysis, Ireland, study design, data management, predictive modeling" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Metrapi - Statistical Consultancy for Healthcare Professionals</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Metrapi – Statistical Consultancy for Healthcare Professionals in Ireland" />
+  <meta property="og:description" content="Metrapi provides professional statistical consultancy and data analysis for healthcare professionals in Ireland. Enhance your research with robust study designs, data management, and predictive modeling." />
+  <meta property="og:image" content="YOUR_LOGO_URL" />
+  <meta property="og:url" content="https://www.yourwebsite.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Metrapi – Statistical Consultancy for Healthcare Professionals in Ireland" />
+  <meta name="twitter:description" content="Metrapi provides professional statistical consultancy and data analysis for healthcare professionals in Ireland. Enhance your research with robust study designs, data management, and predictive modeling." />
+  <meta name="twitter:image" content="YOUR_LOGO_URL" />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300&display=swap" rel="stylesheet">
-  <!-- Link to external CSS file -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- JSON-LD Structured Data for Local Business / Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Metrapi",
+    "description": "Statistical consultancy and data analysis for healthcare professionals in Ireland.",
+    "image": "https://www.metrapi.com/logo-big.png",
+    "url": "https://www.metrapi.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2 Saint Michaels Place",
+      "addressLocality": "Dublin",
+      "addressRegion": "Leinster",
+      "addressCountry": "Ireland"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/sebastianvencken/"
+    ]
+  }
+  </script>
+
   <header>
     <div class="logo">
-      <img src="logo-big.png" alt="Metrapi Logo">
+      <!-- Add meaningful alt text -->
+      <img src="logo-big.png" alt="Metrapi Logo – Statistical Consultancy" />
     </div>
     <div class="header-text">Statistical Consultancy for Healthcare Professionals</div>
   </header>
 
+  <!-- Main Heading (H1) -->
   <section class="intro">
-    <h2>Welcome to Metrapi</h2>
+    <h1>Welcome to Metrapi</h1>
     <p>
-      Metrapi provides statistical support for research projects in healthcare, specialising in helping healthcare workers in Ireland achieve their research goals. Whether it's analysing data, designing studies, or interpreting results, Metrapi ensures your research is robust.
+      Metrapi provides professional <strong>statistical support</strong> for research projects in healthcare, 
+      specializing in helping healthcare workers in Ireland achieve their research goals. 
+      Whether it's analyzing data, designing studies, or interpreting results, 
+      Metrapi ensures your research is robust and adheres to scientific best practices.
     </p>
   </section>
 
+  <!-- Services Section -->
   <section class="services">
-    <h2>Services</h2>
+    <h2>Our Services</h2>
+    <p>
+      We offer a comprehensive range of services to meet your research and data needs:
+    </p>
     <ul class="service-list">
-      <li>Study Protocol Design</li>
-      <li>Study Analysis</li>
-      <li>Data Cleaning and Wrangling</li>
-      <li>Predictive Modelling and Machine Learning</li>
-      <li>eCRF, Database Design and Data Management</li>
-      <li>Grant and Publication Review</li>
+      <li><strong>Study Protocol Design</strong> – Create structured and methodologically sound research plans.</li>
+      <li><strong>Study Analysis</strong> – Perform advanced statistical tests and interpret results accurately.</li>
+      <li><strong>Data Cleaning and Wrangling</strong> – Ensure high-quality, reliable datasets before analysis.</li>
+      <li><strong>Predictive Modelling and Machine Learning</strong> – Generate actionable insights using cutting-edge ML techniques.</li>
+      <li><strong>eCRF, Database Design, and Data Management</strong> – Develop efficient data capture systems and maintain data integrity.</li>
+      <li><strong>Grant and Publication Review</strong> – Strengthen funding proposals and manuscripts for peer-reviewed journals.</li>
     </ul>
   </section>
 
+  <!-- Contact Section -->
   <section class="contact">
     <h2>Contact Me</h2>
+    <p>
+      Have questions about your research project, or interested in any of our services? 
+      Fill out the form below.
+    </p>
     <form class="contact-form" action="https://form.taxi/s/qulv7176" method="POST" onsubmit="showConfirmation(event)">
       <label for="name">Name</label>
-      <input type="text" id="name" name="Name" placeholder="Your name" required>
+      <input type="text" id="name" name="Name" placeholder="Your name" required />
+      
       <label for="email">Email</label>
-      <input type="email" id="email" name="Email" placeholder="Your email" required>
+      <input type="email" id="email" name="Email" placeholder="Your email" required />
+      
       <label for="message">Message</label>
       <textarea id="Message" name="message" rows="5" placeholder="Your message" required></textarea>
+      
       <button type="submit" value="Send">Send</button>
     </form>
     <p id="confirmation" class="confirmation-message">Thank you! Your message has been sent.</p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>
       &copy; <span id="year"></span> Metrapi. All rights reserved.
@@ -61,7 +121,7 @@
     </script>
   </footer>
 
-  <!-- Cookie banner -->
+  <!-- Cookie Banner -->
   <div id="cookie-banner">
     <span>
       We use cookies to ensure you get the best experience on our website.
@@ -72,6 +132,7 @@
     <button onclick="refuseCookies()">Refuse</button>
   </div>
 
+  <!-- JavaScript -->
   <script>
     function showConfirmation(event) {
       event.preventDefault();
@@ -97,7 +158,7 @@
         .split('; ')
         .find(row => row.startsWith('acceptedCookies='));
 
-      // If no value for 'acceptedCookies' cookie, show the banner
+      // If no 'acceptedCookies' cookie, show the banner
       if (!cookieValue) {
         document.getElementById('cookie-banner').style.display = 'block';
       }
