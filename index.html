@@ -99,7 +99,17 @@
       Have questions about your research project, or interested in any of our services? 
       Fill out the form below.
     </p>
-    <form class="contact-form" action="https://form.taxi/s/qulv7176" method="POST" onsubmit="showConfirmation(event)">
+
+    <!-- Hidden iframe to prevent page redirect -->
+    <iframe name="hiddenIframe" style="display:none;"></iframe>
+
+    <form
+      class="contact-form"
+      action="https://form.taxi/s/qulv7176"
+      method="POST"
+      target="hiddenIframe"
+      onsubmit="return showConfirmation();"
+    >
       <label for="name">Name</label>
       <input type="text" id="name" name="Name" placeholder="Your name" required />
       
@@ -111,7 +121,10 @@
       
       <button type="submit" value="Send">Send</button>
     </form>
-    <p id="confirmation" class="confirmation-message">Thank you! Your message has been sent.</p>
+
+    <p id="confirmation" class="confirmation-message" style="display:none;">
+      Thank you! Your message has been sent.
+    </p>
   </section>
 
   <!-- Footer -->
@@ -138,9 +151,14 @@
 
   <!-- JavaScript -->
   <script>
-    function showConfirmation(event) {
+    function showConfirmation() {
+      // Show the "thank you" confirmation message
       document.getElementById('confirmation').style.display = 'block';
+      // Reset the form fields
       document.querySelector('.contact-form').reset();
+
+      // Returning true allows the form to continue submitting
+      return true;
     }
 
     function acceptCookies() {
