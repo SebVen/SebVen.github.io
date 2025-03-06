@@ -30,6 +30,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300&display=swap" rel="stylesheet">
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -100,30 +101,17 @@
       Fill out the form below.
     </p>
 
+    <!-- 
+      Here we embed our separate form page in an iframe. 
+      The user sees 'form.html' within this iframe by default. 
+      Upon submission, that page will redirect to 'success.html' (still inside the iframe).
+    -->
     <iframe 
-      name="successFrame" 
-      id="successFrame" 
-      style="display:none; border:none; width:100%; height:400px;"
+      src="form.html"
+      name="formFrame"
+      id="formFrame"
+      style="border:none; width:100%; height:600px;"
     ></iframe>
-
-    <form
-      class="contact-form"
-      action="https://form.taxi/s/qulv7176?redirect=https://www.metrapi.com/success.html"
-      method="POST"
-      target="successFrame"
-      onsubmit="document.getElementById('successFrame').style.display = 'block';"
-    >
-      <label for="name">Name</label>
-      <input type="text" id="name" name="Name" placeholder="Your name" required />
-      
-      <label for="email">Email</label>
-      <input type="email" id="email" name="Email" placeholder="Your email" required />
-      
-      <label for="message">Message</label>
-      <textarea id="Message" name="message" rows="5" placeholder="Your message" required></textarea>
-      
-      <button type="submit" value="Send">Send</button>
-    </form>
   </section>
 
   <!-- Footer -->
@@ -150,7 +138,6 @@
 
   <!-- JavaScript -->
   <script>
-
     function acceptCookies() {
       // Set a cookie indicating consent
       document.cookie = "acceptedCookies=true; max-age=" + 60*60*24*365 + "; path=/";
